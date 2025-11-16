@@ -1,0 +1,169 @@
+/**
+ * SkinSense Design System - Design Tokens
+ * 
+ * CSS Custom Properties for consistent styling across the application
+ * Based on neumorphic design principles
+ */
+
+:root {
+  /* ===== Color Palette ===== */
+  
+  /* Primary Colors */
+  --color-primary-main: #6C63FF;
+  --color-primary-light: #8B84FF;
+  --color-primary-dark: #5548E0;
+  --color-primary-contrast: #FFFFFF;
+  
+  /* Secondary Colors */
+  --color-secondary-main: #FF6584;
+  --color-secondary-light: #FF8BA3;
+  --color-secondary-dark: #E04968;
+  --color-secondary-contrast: #FFFFFF;
+  
+  /* Background Colors - Neumorphic */
+  --color-background-main: #E4E9F2;
+  --color-background-light: #FFFFFF;
+  --color-background-dark: #D1D9E6;
+  --color-background-paper: #ECEFF4;
+  
+  /* Text Colors */
+  --color-text-primary: #2E3A59;
+  --color-text-secondary: #6B7A99;
+  --color-text-disabled: #A8B4C9;
+  --color-text-hint: #C5CFE0;
+  
+  /* Status Colors */
+  --color-success: #4CAF50;
+  --color-success-light: #81C784;
+  --color-warning: #FF9800;
+  --color-warning-light: #FFB74D;
+  --color-error: #F44336;
+  --color-error-light: #E57373;
+  --color-info: #2196F3;
+  --color-info-light: #64B5F6;
+  
+  /* Border Colors */
+  --color-border-light: #D1D9E6;
+  --color-border-main: #B8C5D6;
+  --color-border-dark: #9FADC2;
+  
+  /* ===== Typography ===== */
+  
+  /* Font Family */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-family-mono: 'Fira Code', 'Courier New', monospace;
+  
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* ===== Spacing ===== */
+  --spacing-xs: 0.25rem;    /* 4px */
+  --spacing-sm: 0.5rem;     /* 8px */
+  --spacing-md: 1rem;       /* 16px */
+  --spacing-lg: 1.5rem;     /* 24px */
+  --spacing-xl: 2rem;       /* 32px */
+  --spacing-2xl: 3rem;      /* 48px */
+  --spacing-3xl: 4rem;      /* 64px */
+  
+  /* ===== Border Radius ===== */
+  --radius-sm: 0.5rem;      /* 8px */
+  --radius-md: 0.75rem;     /* 12px */
+  --radius-lg: 1rem;        /* 16px */
+  --radius-xl: 1.5rem;      /* 24px */
+  --radius-2xl: 2rem;       /* 32px */
+  --radius-full: 9999px;    /* Full circle */
+  
+  /* ===== Shadows - Neumorphic ===== */
+  
+  /* Outer Shadows (Raised effect) */
+  --shadow-neumorphic-sm: 
+    6px 6px 12px rgba(163, 177, 198, 0.6),
+    -6px -6px 12px rgba(255, 255, 255, 0.5);
+  
+  --shadow-neumorphic-md: 
+    9px 9px 16px rgba(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5);
+  
+  --shadow-neumorphic-lg: 
+    12px 12px 24px rgba(163, 177, 198, 0.6),
+    -12px -12px 24px rgba(255, 255, 255, 0.5);
+  
+  /* Inner Shadows (Pressed effect) */
+  --shadow-neumorphic-inset-sm: 
+    inset 4px 4px 8px rgba(163, 177, 198, 0.5),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+  
+  --shadow-neumorphic-inset-md: 
+    inset 6px 6px 12px rgba(163, 177, 198, 0.5),
+    inset -6px -6px 12px rgba(255, 255, 255, 0.5);
+  
+  /* Flat Shadow (Subtle depth) */
+  --shadow-flat: 
+    3px 3px 6px rgba(163, 177, 198, 0.4),
+    -3px -3px 6px rgba(255, 255, 255, 0.4);
+  
+  /* Standard Shadows (for overlays, modals) */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+  
+  /* ===== Transitions ===== */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+  
+  /* ===== Z-Index Layers ===== */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  
+  /* ===== Layout ===== */
+  --max-width-sm: 640px;
+  --max-width-md: 768px;
+  --max-width-lg: 1024px;
+  --max-width-xl: 1280px;
+  --max-width-content: 960px;
+  
+  /* ===== Component Specific ===== */
+  
+  /* Buttons */
+  --button-height-sm: 2rem;
+  --button-height-md: 2.5rem;
+  --button-height-lg: 3rem;
+  
+  /* Inputs */
+  --input-height-sm: 2rem;
+  --input-height-md: 2.5rem;
+  --input-height-lg: 3rem;
+  
+  /* Cards */
+  --card-padding-sm: var(--spacing-md);
+  --card-padding-md: var(--spacing-lg);
+  --card-padding-lg: var(--spacing-xl);
+}
+

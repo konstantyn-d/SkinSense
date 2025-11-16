@@ -31,6 +31,7 @@ export async function authMiddleware(req, res, next) {
     const { data: { user }, error } = await supabase.auth.getUser(token);
 
     if (error || !user) {
+      console.error('Auth error:', error?.message || 'No user found');
       return res.status(401).json({
         error: 'Unauthorized',
         message: 'Invalid or expired token',
@@ -55,7 +56,7 @@ export async function authMiddleware(req, res, next) {
     // Continue to next middleware/handler
     next();
   } catch (error) {
-    console.error('Auth middleware error:', error);
+    console.error('Auth middleware error:', error.message);
     return res.status(500).json({
       error: 'Internal Server Error',
       message: 'Authentication failed',

@@ -46,7 +46,9 @@ export const config = {
   
   // CORS configuration
   cors: {
-    origin: getEnv('FRONTEND_URL', 'http://localhost:5173'),
+    origin: getEnv('NODE_ENV', 'development') === 'development' 
+      ? ['http://localhost:5173', 'http://localhost:5174']
+      : getEnv('FRONTEND_URL', 'http://localhost:5173'),
   },
   
   // Environment

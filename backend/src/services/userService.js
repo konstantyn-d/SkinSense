@@ -18,6 +18,7 @@ import { supabase } from '../lib/supabaseClient.js';
 export async function ensureUserExists(supabaseUser) {
   try {
     const { id, email, metadata } = supabaseUser;
+    const user_metadata = metadata;
 
     // Check if user already exists in our database
     const { data: existingUser, error: selectError } = await supabase
@@ -32,24 +33,27 @@ export async function ensureUserExists(supabaseUser) {
     }
 
     // If user doesn't exist, create new record
+    const fullName = user_metadata?.full_name || user_metadata?.name || email?.split('@')[0] || 'User';
+    
     const { data: newUser, error: insertError } = await supabase
       .from('users')
       .insert({
         id,
         email,
-        full_name: metadata?.full_name || metadata?.name || null,
+        full_name: fullName,
       })
       .select()
       .single();
 
     if (insertError) {
+      console.error('Failed to create user:', insertError.message);
       throw new Error(`Failed to create user: ${insertError.message}`);
     }
 
     console.log(`✅ New user created: ${email}`);
     return newUser;
   } catch (error) {
-    console.error('Error in ensureUserExists:', error);
+    console.error('Error in ensureUserExists:', error.message);
     throw error;
   }
 }

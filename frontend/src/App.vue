@@ -1,11 +1,16 @@
-<script setup></script>
+<script setup>
+// Main App component with router
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
-<style scoped></style>
+<style>
+/* Global app styles are imported in main.js */
+#app {
+  min-height: 100vh;
+}
+</style>
