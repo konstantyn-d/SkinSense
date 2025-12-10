@@ -123,7 +123,11 @@ const handleSubmit = () => {
       <div class="login-container">
         <!-- Logo Section -->
         <div class="logo-section mb-xl">
-          <div class="logo-icon">✨</div>
+          <div class="logo-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 7.69431C10 2.99988 3 3.49988 3 9.49991C3 15.4999 12 20.5001 12 20.5001C12 20.5001 21 15.4999 21 9.49991C21 3.49988 14 2.99988 12 7.69431Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h1 class="logo-title">SkinSense</h1>
           <p class="logo-subtitle">AI-Powered Skin Analysis</p>
         </div>
@@ -148,13 +152,21 @@ const handleSubmit = () => {
 
           <!-- Success Message -->
           <div v-if="successMessage" class="success-message mb-lg">
-            <span class="success-icon">✅</span>
+            <span class="success-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.9258 20.6314C15.0319 19.6781 20 16.7333 20 10.165V6.19691C20 5.07899 20 4.5192 19.7822 4.0918C19.5905 3.71547 19.2837 3.40973 18.9074 3.21799C18.4796 3 17.9203 3 16.8002 3H7.2002C6.08009 3 5.51962 3 5.0918 3.21799C4.71547 3.40973 4.40973 3.71547 4.21799 4.0918C4 4.51962 4 5.08009 4 6.2002V10.165C4 16.7333 8.9678 19.6781 11.074 20.6314C11.2972 20.7325 11.4094 20.7829 11.6621 20.8263C11.8215 20.8537 12.1795 20.8537 12.3389 20.8263C12.5907 20.7831 12.7017 20.7328 12.9235 20.6324L12.9258 20.6314Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
             {{ successMessage }}
           </div>
 
           <!-- Error Message -->
           <div v-if="formErrors.general" class="error-message mb-lg">
-            <span class="error-icon">❌</span>
+            <span class="error-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 8.44971V12.4497M7.33173 3.9375L3.9375 7.33173L3.93442 7.33462C3.59057 7.67847 3.41824 7.85081 3.29492 8.05204C3.18526 8.23098 3.10425 8.4263 3.05526 8.63037C3 8.86055 3 9.10506 3 9.59424V14.4058C3 14.8949 3 15.1395 3.05526 15.3697C3.10425 15.5738 3.18526 15.7688 3.29492 15.9478C3.41857 16.1495 3.59182 16.3228 3.9375 16.6685L7.33173 20.0627C7.67763 20.4086 7.85021 20.5812 8.05204 20.7048C8.23099 20.8145 8.42581 20.8958 8.62988 20.9448C8.85971 21 9.10382 21 9.59151 21H14.4075C14.8952 21 15.1404 21 15.3702 20.9448C15.5743 20.8958 15.7693 20.8145 15.9482 20.7049C16.1501 20.5812 16.323 20.4086 16.6689 20.0627L20.0632 16.6685C20.4091 16.3226 20.5817 16.1496 20.7053 15.9478C20.815 15.7688 20.8953 15.5738 20.9443 15.3697C20.9996 15.1395 21 14.895 21 14.4058V9.59424C21 9.10506 20.9996 8.86055 20.9443 8.63037C20.8953 8.4263 20.815 8.23099 20.7053 8.05205C20.5817 7.85022 20.4091 7.67761 20.0632 7.33173L16.6689 3.9375C16.3233 3.59181 16.15 3.41857 15.9482 3.29492C15.7693 3.18526 15.5743 3.10425 15.3702 3.05526C15.14 3 14.8945 3 14.4053 3H9.59375C9.10457 3 8.86006 3 8.62988 3.05526C8.42581 3.10425 8.23099 3.18526 8.05204 3.29492C7.85204 3.41748 7.68106 3.58847 7.3414 3.92813L7.33173 3.9375ZM12.0498 15.4497V15.5497L11.9502 15.5499V15.4497H12.0498Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
             {{ formErrors.general }}
           </div>
 
@@ -312,13 +324,18 @@ const handleSubmit = () => {
   width: 80px;
   height: 80px;
   margin: 0 auto var(--spacing-md);
-  background: var(--color-background-main);
+  background: linear-gradient(135deg, var(--color-primary-main), var(--color-secondary-main));
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-neumorphic-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  color: white;
+}
+
+.logo-icon svg {
+  width: 40px;
+  height: 40px;
 }
 
 .logo-title {
@@ -387,6 +404,19 @@ const handleSubmit = () => {
 .success-message {
   background: var(--color-success-light);
   color: white;
+}
+
+.success-icon,
+.error-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-icon svg,
+.error-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .error-message {
