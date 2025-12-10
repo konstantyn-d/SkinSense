@@ -1,0 +1,454 @@
+/**
+ * SkinSense - Neumorphic Components
+ * 
+ * Reusable neumorphic UI components
+ */
+
+/* ===== Neumorphic Card ===== */
+
+.neumorphic-card {
+  background: var(--color-background-main);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-neumorphic-md);
+  padding: var(--card-padding-md);
+  transition: all var(--transition-base);
+}
+
+.neumorphic-card:hover {
+  box-shadow: var(--shadow-neumorphic-lg);
+}
+
+.neumorphic-card.card-sm {
+  padding: var(--card-padding-sm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-neumorphic-sm);
+}
+
+.neumorphic-card.card-lg {
+  padding: var(--card-padding-lg);
+  border-radius: var(--radius-xl);
+}
+
+.neumorphic-card.card-flat {
+  box-shadow: var(--shadow-flat);
+}
+
+.neumorphic-card.card-inset {
+  box-shadow: var(--shadow-neumorphic-inset-md);
+}
+
+/* ===== Neumorphic Button ===== */
+
+.neumorphic-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-xl);
+  height: var(--button-height-md);
+  background: var(--color-background-main);
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-neumorphic-sm);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.neumorphic-button:hover:not(:disabled) {
+  box-shadow: var(--shadow-neumorphic-md);
+  transform: translateY(-1px);
+}
+
+.neumorphic-button:active:not(:disabled) {
+  box-shadow: var(--shadow-neumorphic-inset-sm);
+  transform: translateY(0);
+}
+
+.neumorphic-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Button Sizes */
+.neumorphic-button.btn-sm {
+  height: var(--button-height-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+}
+
+.neumorphic-button.btn-lg {
+  height: var(--button-height-lg);
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  font-size: var(--font-size-lg);
+}
+
+/* Button Variants */
+.neumorphic-button.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary-main), var(--color-primary-light));
+  color: var(--color-primary-contrast);
+  box-shadow: 
+    6px 6px 12px rgba(108, 99, 255, 0.3),
+    -6px -6px 12px rgba(139, 132, 255, 0.1);
+}
+
+.neumorphic-button.btn-primary:hover:not(:disabled) {
+  box-shadow: 
+    9px 9px 16px rgba(108, 99, 255, 0.4),
+    -9px -9px 16px rgba(139, 132, 255, 0.15);
+}
+
+.neumorphic-button.btn-primary:active:not(:disabled) {
+  box-shadow: 
+    inset 4px 4px 8px rgba(85, 72, 224, 0.4),
+    inset -4px -4px 8px rgba(139, 132, 255, 0.2);
+}
+
+.neumorphic-button.btn-secondary {
+  background: linear-gradient(135deg, var(--color-secondary-main), var(--color-secondary-light));
+  color: var(--color-secondary-contrast);
+  box-shadow: 
+    6px 6px 12px rgba(255, 101, 132, 0.3),
+    -6px -6px 12px rgba(255, 139, 163, 0.1);
+}
+
+.neumorphic-button.btn-icon {
+  width: var(--button-height-md);
+  height: var(--button-height-md);
+  padding: 0;
+  border-radius: var(--radius-full);
+}
+
+/* ===== Neumorphic Input ===== */
+
+.neumorphic-input {
+  width: 100%;
+  height: var(--input-height-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-background-main);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-neumorphic-inset-sm);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+}
+
+.neumorphic-input:focus {
+  box-shadow: 
+    var(--shadow-neumorphic-inset-sm),
+    0 0 0 2px var(--color-primary-light);
+}
+
+.neumorphic-input::placeholder {
+  color: var(--color-text-hint);
+}
+
+/* Input Sizes */
+.neumorphic-input.input-sm {
+  height: var(--input-height-sm);
+  font-size: var(--font-size-sm);
+}
+
+.neumorphic-input.input-lg {
+  height: var(--input-height-lg);
+  font-size: var(--font-size-lg);
+}
+
+/* ===== Stat Card ===== */
+
+.stat-card {
+  background: var(--color-background-main);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-neumorphic-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  transition: all var(--transition-base);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-neumorphic-lg);
+  transform: translateY(-2px);
+}
+
+.stat-card-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-card-value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.stat-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-background-main);
+  box-shadow: var(--shadow-neumorphic-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ===== Progress Bar ===== */
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: var(--color-background-main);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-neumorphic-inset-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary-main), var(--color-primary-light));
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Progress Bar Variants */
+.progress-bar.progress-success .progress-bar-fill {
+  background: linear-gradient(90deg, var(--color-success), var(--color-success-light));
+}
+
+.progress-bar.progress-warning .progress-bar-fill {
+  background: linear-gradient(90deg, var(--color-warning), var(--color-warning-light));
+}
+
+.progress-bar.progress-error .progress-bar-fill {
+  background: linear-gradient(90deg, var(--color-error), var(--color-error-light));
+}
+
+/* ===== Badge ===== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-background-main);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-flat);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge.badge-primary {
+  background: var(--color-primary-light);
+  color: var(--color-primary-contrast);
+}
+
+.badge.badge-success {
+  background: var(--color-success-light);
+  color: white;
+}
+
+.badge.badge-warning {
+  background: var(--color-warning-light);
+  color: white;
+}
+
+.badge.badge-error {
+  background: var(--color-error-light);
+  color: white;
+}
+
+/* ===== Avatar ===== */
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--color-background-main);
+  box-shadow: var(--shadow-neumorphic-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar.avatar-sm {
+  width: 32px;
+  height: 32px;
+  font-size: var(--font-size-sm);
+}
+
+.avatar.avatar-lg {
+  width: 64px;
+  height: 64px;
+  font-size: var(--font-size-xl);
+}
+
+.avatar.avatar-xl {
+  width: 96px;
+  height: 96px;
+  font-size: var(--font-size-2xl);
+}
+
+/* ===== Divider ===== */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border-light);
+  margin: var(--spacing-lg) 0;
+}
+
+/* ===== Loading Spinner ===== */
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--color-background-dark);
+  border-top-color: var(--color-primary-main);
+  border-radius: var(--radius-full);
+  animation: spin 0.8s linear infinite;
+}
+
+.spinner.spinner-sm {
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+}
+
+.spinner.spinner-lg {
+  width: 60px;
+  height: 60px;
+  border-width: 6px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Modal Overlay ===== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(46, 58, 89, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-index-modal-backdrop);
+  padding: var(--spacing-md);
+}
+
+.modal-content {
+  background: var(--color-background-main);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--spacing-xl);
+  position: relative;
+  z-index: var(--z-index-modal);
+}
+
+/* ===== Toast Notification ===== */
+
+.toast {
+  position: fixed;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  background: var(--color-background-main);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  z-index: var(--z-index-tooltip);
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast.toast-success {
+  border-left: 4px solid var(--color-success);
+}
+
+.toast.toast-error {
+  border-left: 4px solid var(--color-error);
+}
+
+.toast.toast-warning {
+  border-left: 4px solid var(--color-warning);
+}
+
+.toast.toast-info {
+  border-left: 4px solid var(--color-info);
+}
+
